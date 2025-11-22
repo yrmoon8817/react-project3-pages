@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react";
-import Page from "../../components/Page";
-import Title from "../../components/Title";
-import Navbar from "../../components/Navbar";
-import ErrorDialog from "../../components/ErrorDialog";
-import OrderDeliveryCard from "./OrderDeliveryCard";
-import OrderPaymentCard from "./OrderPaymentCard";
-import OrderStatusCard from "./OrderStatusCard";
-import OrderApi from "../../../shared/api/OrderApi";
-import * as MyLayout from "../../libs/MyLayout";
+import OrderApi from "../../../shared/api/OrderApi.js";
+import * as MyLayout from "../../libs/MyLayout.jsx";
+import Page from "../../components/Page.jsx";
+import Title from "../../components/Title.jsx";
+import Navbar from "../../components/Navbar.jsx";
+import ErrorDialog from "../../components/ErrorDialog.jsx";
+import OrderDeliveryCard from "./OrderDeliveryCard.jsx";
+import OrderPaymentCard from "./OrderPaymentCard.jsx";
+import OrderStatusCard from "./OrderStatusCard.jsx";
 
 const OrderPage = () => {
   const [order, setOrder] = useState();

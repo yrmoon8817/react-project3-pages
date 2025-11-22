@@ -1,4 +1,5 @@
-import Card from "../../components/Card";
+import React from 'react';
+import Card from "../../components/Card.jsx";
 
 const OrderDeliveryCard = ({ order }) => {
   const { deliveryAddress, deliveryContact, messageToShop, messageToRider } =

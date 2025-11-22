@@ -1,8 +1,8 @@
 import React from "react"
-import Card from "../../components/Card";
-import Button from "../../components/Button";
-import * as MyLayout from "../../libs/MyLayout"
-import Dialog from "../../components/Dialog";
+import * as MyLayout from "../../libs/MyLayout.jsx"
+import Card from "../../components/Card.jsx";
+import Button from "../../components/Button.jsx";
+import Dialog from "../../components/Dialog.jsx";
 
 const OrderStatusCard = ({ order }) => {
   console.log("OrderStatusCard rendered")

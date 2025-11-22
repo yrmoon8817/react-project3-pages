@@ -1,4 +1,5 @@
-import * as MyLayout from "../libs/MyLayout"
+import React from 'react';
+import * as MyLayout from "../libs/MyLayout.jsx"
 
 const Page = ({ header, children, footer }) => (
   <div className="Page">

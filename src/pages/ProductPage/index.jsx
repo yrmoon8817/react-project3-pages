@@ -1,11 +1,12 @@
-import React from "react";
-import OrderableProductItem from "./OrderableProductItem";
-import Page from "../../components/Page";
-import Title from "../../components/Title";
-import Navbar from "../../components/Navbar";
-import ErrorDialog from "../../components/ErrorDialog";
-import ProductApi from "../../../shared/api/ProductApi";
-import * as MyLayout from "../../libs/MyLayout";
+import React, {useState, useEffect}from "react";
+import ProductApi from "../../../shared/api/ProductApi.js";
+import * as MyLayout from "../../libs/MyLayout.jsx";
+import * as MyRouter from "../../libs/MyRouter.jsx";
+import Page from "../../components/Page.jsx";
+import Title from "../../components/Title.jsx";
+import Navbar from "../../components/Navbar.jsx";
+import ErrorDialog from "../../components/ErrorDialog.jsx";
+import OrderableProductItem from "./OrderableProductItem.jsx";
 
 const ProductPage = () => {
   const {openDialog} = MyLayout.useDialog();
@@ -14,16 +15,17 @@ const ProductPage = () => {
   const fetch = async() =>{
     startLoading("메뉴 목록 로딩중..");
     try {
-      const productList = await ProductApi.fetchProductList();
-      setProductList(productList);
-
+      setTimeout(async()=>{
+        const productList = await ProductApi.fetchProductList();
+        setProductList(productList);
+      },300)
     }catch (e) {
       openDialog(<ErrorDialog />);
       return;
     }
     finishLoading();
   }
-  React.useEffect(()=>{
+  useEffect(()=>{
     fetch();
   },[]);
   
@@ -31,7 +33,7 @@ const ProductPage = () => {
       <div className="ProductPage">
         <Page header={<Title>메뉴목록</Title>} footer={<Navbar />}>
           <ul>
-            {productList.map((product) => (
+            {productList&&productList.map((product) => (
               <li key={product.id}>
                 <OrderableProductItem product={product} />
               </li>

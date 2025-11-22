@@ -1,7 +1,8 @@
-import Dialog from "../../components/Dialog";
-import Button from "../../components/Button";
-import * as MyRouter from "../../libs/MyRouter";
-import * as MyLayout from "../../libs/MyLayout";
+import React from 'react';
+import * as MyRouter from "../../libs/MyRouter.jsx";
+import * as MyLayout from "../../libs/MyLayout.jsx";
+import Dialog from "../../components/Dialog.jsx";
+import Button from "../../components/Button.jsx";
 
 const PaymentSuccessDialog = () => {
   const navigate = MyRouter.useNavigate();

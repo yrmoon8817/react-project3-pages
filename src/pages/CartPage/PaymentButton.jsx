@@ -1,4 +1,5 @@
-import Button from "../../components/Button";
+import React from 'react';
+import Button from "../../components/Button.jsx";
 
 const PaymentButton = () => (
   <div className="PaymentButton">

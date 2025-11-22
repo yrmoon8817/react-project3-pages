@@ -1,7 +1,7 @@
 import React from "react";
-import Dialog from "./Dialog";
-import Button from "./Button";
-import * as MyLayout from "../libs/MyLayout";
+import * as MyLayout from "../libs/MyLayout.jsx";
+import Dialog from "./Dialog.jsx";
+import Button from "./Button.jsx";
 
 const ErrorDialog = () => {
   const {closeDialog} = MyLayout.useDialog();

@@ -1,20 +1,18 @@
 import React from 'react';
-import * as MyForm from './libs/MyForm';
-import ProductPage from "./pages/ProductPage";
-import CartPage from "./pages/CartPage";
-import OrderPage from './pages/OrderPage';
-import * as MyRouter from './libs/MyRouter';
-import * as MyLayout from './libs/MyLayout';
-import MyReact from './libs/MyReact';
+import * as MyRouter from './libs/MyRouter.jsx';
+import * as MyLayout from './libs/MyLayout.jsx';
+import ProductPage from "./pages/ProductPage/index.jsx";
+import CartPage from "./pages/CartPage/index.jsx";
+import OrderPage from './pages/OrderPage/index.jsx';
 import './style.css';
 
 const App = () => (
   <MyLayout.Layout>
     <MyRouter.Router>
       <MyRouter.Routes>
+        <MyRouter.Route path="/" element={<ProductPage />} />
         <MyRouter.Route path="/cart" element={<CartPage />} />
         <MyRouter.Route path="/order" element={<OrderPage />} />
-        <MyRouter.Route path="/" element={<ProductPage />} />
       </MyRouter.Routes>
     </MyRouter.Router>
   </MyLayout.Layout>

@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from "react";
-import Page from "../../components/Page";
-import Title from "../../components/Title";
-import Navbar from "../../components/Navbar";
-import ErrorDialog from "../../components/ErrorDialog";
-import PaymentButton from "./PaymentButton";
-import PaymentSuccessDialog from "./PaymentSuccessDialog";
-import OrderForm from "./OrderForm";
-import ProductItem from "../../components/ProductItem";
-import OrderApi from "/shared/api/OrderApi";
-import ProductApi from "/shared/api/ProductApi";
-import * as MyRouter from '../../libs/MyRouter'
-import * as MyLayout from "../../libs/MyLayout";
+import ProductApi from "../../../shared/api/ProductApi.js";
+import OrderApi from "../../../shared/api/OrderApi.js";
+import * as MyRouter from '../../libs/MyRouter.jsx'
+import * as MyLayout from "../../libs/MyLayout.jsx";
+import Page from "../../components/Page.jsx";
+import Title from "../../components/Title.jsx";
+import Navbar from "../../components/Navbar.jsx";
+import ErrorDialog from "../../components/ErrorDialog.jsx";
+import PaymentButton from "./PaymentButton.jsx";
+import PaymentSuccessDialog from "./PaymentSuccessDialog.jsx";
+import OrderForm from "./OrderForm.jsx";
+import ProductItem from "../../components/ProductItem.jsx";
 
 const CartPage = () => {
   const [product, setProduct] =  useState();

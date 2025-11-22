@@ -1,4 +1,5 @@
-import Button from "./Button";
+import React from 'react';
+import Button from "./Button.jsx";
 
 const ProductItem = ({ product, onClick }) => {
   const { name, price, thumbnail } = product;
