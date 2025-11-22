@@ -1,0 +1,21 @@
+{
+  "name": "react-project3-pages",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "globals": "^16.5.0",
+    "msw": "^2.12.2",
+    "vite": "^7.2.4"
+  }
+}
