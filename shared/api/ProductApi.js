@@ -3,7 +3,9 @@ const fetchProductList = async () => {
 };
 
 const fetchProduct = async (id) => {
-  return fetch(`/api/product/${id}`).then((res) => res.json());
+  const res = await fetch(`/api/product/${id}`);
+  if (!res.ok) throw new Error("Not found");
+  return res.json();
 };
 
 const ProductApi = {
