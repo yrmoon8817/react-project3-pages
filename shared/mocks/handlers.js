@@ -1,5 +1,5 @@
 import { http, HttpResponse } from "msw";
-import { database } from "data";
+import { database } from "./data";
 
 const RESPONSE_DELAY_MS = 1000;
 
