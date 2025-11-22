@@ -1,4 +1,5 @@
 import path from "path";
+import webpack from 'webpack'
 
 export default {
   mode: "development",
@@ -20,6 +21,11 @@ export default {
     port: 3000,
     historyApiFallback: true,
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV || "development"),
+    }),
+  ],
   module: {
     rules: [
       {
