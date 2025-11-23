@@ -17,7 +17,6 @@ export default {
   resolve: {
     extensions: [".js", ".jsx"],
   },
-  devtool: "source-map",
   devServer: {
     static: path.resolve(process.cwd(), "public"),
     port: 3000,

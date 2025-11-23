@@ -1,7 +1,6 @@
-import React, {useState, useEffect}from "react";
+import React, {useEffect}from "react";
 import ProductApi from "../../../shared/api/ProductApi.js";
 import * as MyLayout from "../../libs/MyLayout.jsx";
-import * as MyRouter from "../../libs/MyRouter.jsx";
 import Page from "../../components/Page.jsx";
 import Title from "../../components/Title.jsx";
 import Navbar from "../../components/Navbar.jsx";
