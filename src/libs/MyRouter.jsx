@@ -6,11 +6,16 @@ routerContext.displayName = 'RouterContext';
 
 
 export const Router = ({children}) =>{
-  const [path, setPath] = useState(window.location.pathname);
-
-  const changePath = (path)  =>{
-    setPath(path);
-    window.history.pushState({path}, "", path);
+  const rawPath = window.location.pathname;
+  const normalizedPath = rawPath.replace(BASE, "") || "/";
+  const [path, setPath] = useState(normalizedPath);
+  const BASE = process.env.NODE_ENV === "production"
+  ? "/react-project3-pages"
+  : "";
+  const changePath = (nextPath)  =>{
+    const fullPath = BASE + nextPath;
+    setPath(nextPath);
+    window.history.pushState({ path: nextPath }, "", fullPath);
   }
   const handlePopstate = (event) =>{
     const nextPath = event.state && event.state.path;
