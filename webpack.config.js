@@ -1,8 +1,10 @@
 import path from "path";
 import webpack from 'webpack'
 
+const isProd = process.env.NODE_ENV === "production";
+
 export default {
-  mode: "development",
+  mode: isProd ? "production" : "development",
   entry: {
     main: "./src/main",
   },
@@ -10,14 +12,14 @@ export default {
     path: path.resolve(process.cwd(), "dist"),
     filename: "[name].bundle.js",
     clean: true,
-    publicPath: "/",
+    publicPath: isProd ? "/react-project3-pages/" : "/", // ★ 환경별 경로 분리
   },
   resolve: {
     extensions: [".js", ".jsx"],
   },
   devtool: "source-map",
   devServer: {
-     static: path.resolve(process.cwd(), "public"),
+    static: path.resolve(process.cwd(), "public"),
     port: 3000,
     historyApiFallback: true,
   },
@@ -34,10 +36,10 @@ export default {
         include: [
           path.resolve(process.cwd(), "src"),
           path.resolve(process.cwd(), "shared"),
-        ], 
+        ],
         use: {
           loader: "babel-loader",
-        },               
+        },
       },
       {
         test: /\.css$/,
